@@ -1,5 +1,4 @@
 // Name: Isabella Shilliday 
-// @version
 // StudentID: 547
 // Description: goes through each method and does the operation specified 
 // in each method
@@ -10,6 +9,7 @@ public class Calculator {
 
 	//variable for total returned  
 	private int total;
+	StringBuffer history; 
 	
 	public Calculator () {
 		total = 0;  // not needed - included for clarity
@@ -23,17 +23,19 @@ public class Calculator {
 	// add operation that adds to the total
 	public void add (int value) {
 		 total += value; 
-		
+		 history.append("+" + value); 
 	}
 	
 	// subtract operation that subtracts from the total
 	public void subtract (int value) {
 		 total-= value; 
+		 history.append("-" + value); 
 	}
 	
 	// multiply operation that multiplies the total
 	public void multiply (int value) {
 		total *= value; 
+		history.append("*" + value); 
 	}
 	
 	// divide operation that divides from the total
@@ -45,10 +47,12 @@ public class Calculator {
 		else 
 		{
 		    total = total / value; 
+		    history.append("/" + value); 
 		}
 	}
 	
+	// gets the user history 
 	public String getHistory () {
-		return "";
+		return history.toString();
 	}
 }
